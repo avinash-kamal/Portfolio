@@ -2,37 +2,30 @@
   background: rgba(0, 0, 0, 0.9);
   position: relative;
   overflow: hidden;
+  padding: 2rem;
 }
 
 .main-wrapper:after {
   content: '';
   position: absolute;
-  width: 500px;
-  height: 300px;
+  width: 800px;
+  height: 600px;
   border: 1px solid rgba(136, 136, 136, 0.4);
-  top: -15%;
-  right: -5%;
+  top: -5%;
+  right: -10%;
   overflow: hidden;
-  /*!* Skew *!*/
-  /*-webkit-transform: skew(20deg);*/
-  /*-moz-transform: skew(20deg);*/
-  /*-o-transform: skew(20deg);*/
-  transform: skew(20deg) rotate(60deg);
+  transform: skew(20deg) rotate(70deg);
 }
 
 .main-wrapper:before {
   content: '';
   position: absolute;
-  width: 500px;
-  height: 300px;
+  width: 800px;
+  height: 600px;
   border: 1px solid rgba(136, 136, 136, 0.4);
-  bottom: -15%;
-  left: -15%;
+  bottom: 40%;
+  left: -10%;
   overflow: hidden;
-  /*!* Skew *!*/
-  /*-webkit-transform: skew(20deg);*/
-  /*-moz-transform: skew(20deg);*/
-  /*-o-transform: skew(20deg);*/
   transform: skew(20deg) rotate(-60deg);
 }
 
@@ -43,7 +36,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 2rem;
+  z-index: 10;
 }
 
 .carousel {
@@ -70,6 +63,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  z-index: 10;
   transition: opacity 2s;
 }
 
@@ -106,6 +100,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  z-index: 10;
 }
 
 .about-heading {
@@ -115,12 +110,11 @@
 .about-heading:after {
   content: 'HI! I AM AVINASH KAMAL.';
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 50%;
   left: 50%;
-  transform: translateX(-45%);
-  letter-spacing: 10px;
+  width: 100%;
+  transform: translateX(-40%) translateY(-25%);
+  letter-spacing: 8px;
   color: #FFF;
   font-size: 16px;
 }
@@ -128,6 +122,9 @@
 .about-content {
   font-size: 20px;
   color: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 img{
@@ -157,4 +154,31 @@ img{
 .social-media-link:hover {
   background: #FFF;
   color: #333;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.skill-heading {
+  color: #333333;
+  font-size: 20px;
+}
+
+.technology {
+  color: #888888;
+  display: grid;
+  /*grid-template-columns: 100px 1fr;*/
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
 }
