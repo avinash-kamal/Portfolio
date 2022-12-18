@@ -1,7 +1,9 @@
 import './App.css';
 import profileImage from './about-image.jpg'
 import {useEffect, useState} from "react";
-import {Instagram, LinkedIn} from '@mui/icons-material';
+import {Email, Instagram, LinkedIn, Phone} from '@mui/icons-material';
+
+import LinearWithValueLabel from "./components/LinearProgressWithLabel";
 
 const delay = 10000
 const carouselContent = [
@@ -12,6 +14,56 @@ const carouselContent = [
   {
     question: "I'm from Vizag",
     answer: "A Web Developer"
+  }
+]
+
+const skillsContent = [
+  {
+    techHeading: "Frontend",
+    technologies: [
+      {
+        name: 'HTML',
+        progress: 80
+      },
+      {
+        name: 'CSS',
+        progress: 85
+      },
+      {
+        name: 'ES6',
+        progress: 75
+      },
+      {
+        name: 'ReactJS',
+        progress: 80
+      },
+      {
+        name: 'Figma',
+        progress: 60
+      }
+    ]
+  },
+  {
+    techHeading: "Backend",
+    technologies: [
+      {
+        name: 'NodeJS',
+        progress: 80
+      },
+      {
+        name: 'Express',
+        progress: 80
+      }
+    ]
+  },
+  {
+    techHeading: "Database",
+    technologies: [
+      {
+        name: 'MongoDB',
+        progress: 80
+      }
+    ]
   }
 ]
 
@@ -37,6 +89,7 @@ const App = () => {
 
   return (
     <div className="main-wrapper">
+      <div className="page-progress"></div>
       {/* NAVIGATION SECTION */}
       <div className="navigation">
       </div>
@@ -89,14 +142,68 @@ const App = () => {
             </div>
             <div className="contact-info-container" style={{marginTop: "1rem"}}>
               <h3 style={{color: "#FFF"}}>Contact me here!</h3>
-              <p>
-                Email: <a target={"_blank"} href="mailto:kamalavinash26@gmail.com" rel={"noreferrer"}
-                           style={{textDecoration: "none", color: "#0653DFFF"}}>kamalavinash26@gmail.com</a>
-              </p>
-              <p style={{marginTop: "1rem"}}>
-                Phone: <a href="tel:+918978299800"
-                          style={{textDecoration: "none", color: "#0653DFFF"}}>+91 8978299800</a>
-              </p>
+              <div className={"contact-info"}>
+                <Email/> <a target={"_blank"} href="mailto:kamalavinash26@gmail.com" rel={"noreferrer"}
+                            style={{textDecoration: "none", color: "#0653DFFF"}}>kamalavinash26@gmail.com</a>
+              </div>
+              <div className={"contact-info"} style={{marginTop: "1rem"}}>
+                <Phone/> <a href="tel:+918978299800"
+                            style={{textDecoration: "none", color: "#0653DFFF"}}>+91 8978299800</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="skills">
+        <h2 className={"large-heading"} style={{textAlign: "center", textTransform: "uppercase"}}>Skills</h2>
+        <div className="skills-wrapper">
+          {
+            skillsContent.map((skill, skillIndex) => (
+              <div className="skill" key={skillIndex}>
+                <h3 className="skill-heading">
+                  {skill.techHeading}
+                </h3>
+                <div className="skill-list">
+                  {
+                    skill.technologies.map((tech, techIndex) => (
+                      <div className="technology" key={`${tech.name} - ${techIndex}`}>
+                        <div className="tech-name">
+                          <p>{tech.name}</p>
+                        </div>
+                        <LinearWithValueLabel progress={tech.progress}/>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            ))
+          }
+
+        </div>
+      </div>
+      <div className="contact">
+        <h2 className={"large-heading"} style={{textAlign: "center", textTransform: "uppercase"}}>Contact</h2>
+        <div className="contact-container">
+          <div className="contact-form">
+            <form action="">
+              <div className="form-control">
+                <div className="input-container">
+                  <input type="text" required/>
+                  <span className={"placeholder"}>Enter Name</span>
+                </div>
+              </div>
+              <div className="form-control">
+                <textarea rows={5} placeholder={"Enter message"}/>
+              </div>
+              <button className={'btn btn-primary'}>Submit</button>
+            </form>
+          </div>
+          <div className={"social-media-container contact-info-social"}>
+            <div className="social-media-link">
+              <LinkedIn/>
+            </div>
+            <div className="social-media-link">
+              <Instagram/>
             </div>
           </div>
         </div>

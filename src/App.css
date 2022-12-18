@@ -1,38 +1,31 @@
 .main-wrapper {
-  background: rgba(0, 0, 0, 0.9);
+  background: #191919;
   position: relative;
   overflow: hidden;
+  padding: 2rem;
 }
 
 .main-wrapper:after {
   content: '';
   position: absolute;
-  width: 500px;
-  height: 300px;
+  width: 800px;
+  height: 600px;
   border: 1px solid rgba(136, 136, 136, 0.4);
-  top: -15%;
-  right: -5%;
+  top: -5%;
+  right: -10%;
   overflow: hidden;
-  /*!* Skew *!*/
-  /*-webkit-transform: skew(20deg);*/
-  /*-moz-transform: skew(20deg);*/
-  /*-o-transform: skew(20deg);*/
-  transform: skew(20deg) rotate(60deg);
+  transform: skew(20deg) rotate(70deg);
 }
 
 .main-wrapper:before {
   content: '';
   position: absolute;
-  width: 500px;
-  height: 300px;
+  width: 800px;
+  height: 600px;
   border: 1px solid rgba(136, 136, 136, 0.4);
-  bottom: -15%;
-  left: -15%;
+  bottom: 40%;
+  left: -10%;
   overflow: hidden;
-  /*!* Skew *!*/
-  /*-webkit-transform: skew(20deg);*/
-  /*-moz-transform: skew(20deg);*/
-  /*-o-transform: skew(20deg);*/
   transform: skew(20deg) rotate(-60deg);
 }
 
@@ -43,7 +36,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 2rem;
+  z-index: 10;
 }
 
 .carousel {
@@ -70,6 +63,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
+  z-index: 10;
   transition: opacity 2s;
 }
 
@@ -85,7 +79,7 @@
   letter-spacing: 5px;
 }
 
-.carousel-container h1{
+.carousel-container h1 {
   color: #FFF;
   font-size: 80px;
   letter-spacing: 5px;
@@ -106,6 +100,7 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  z-index: 10;
 }
 
 .about-heading {
@@ -115,12 +110,11 @@
 .about-heading:after {
   content: 'HI! I AM AVINASH KAMAL.';
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 50%;
   left: 50%;
-  transform: translateX(-45%);
-  letter-spacing: 10px;
+  width: 100%;
+  transform: translateX(-40%) translateY(-25%);
+  letter-spacing: 8px;
   color: #FFF;
   font-size: 16px;
 }
@@ -128,9 +122,12 @@
 .about-content {
   font-size: 20px;
   color: #888;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-img{
+img {
   width: 20rem;
 }
 
@@ -158,3 +155,131 @@ img{
   background: #FFF;
   color: #333;
 }
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.skill-heading {
+  color: #333333;
+  font-size: 20px;
+}
+
+.technology {
+  color: #888888;
+  display: grid;
+  /*grid-template-columns: 100px 1fr;*/
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+textarea {
+  border-radius: 8px;
+  resize: none;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #191919;
+  text-shadow: 1px 1px 0 #090909;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.input-container {
+  color: #F1F1F1;
+  position: relative;
+  font-size: 16px;
+  margin-bottom: 4px;
+  padding-top: 20px;
+}
+
+input, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+  text-shadow: 1px 1px 0 #212121;
+  box-shadow: inset 2px 2px 5px #090909, inset -5px -5px 10px #141414;
+  width: 100%;
+  background: #191919;
+  caret-color: #F1F1F1;
+  color: #F1F1F1;
+  appearance: none;
+  border-radius: 8px;
+  outline: none;
+  padding: 12px;
+  background: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-container .placeholder {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #888888;
+  transition: top 0.3s ease,
+  font-size 0.3s ease,
+  color 0.3s ease
+}
+
+.input-container input + .placeholder {
+  padding: 0 4px;
+}
+
+.input-container input:valid, .input-container input:focus {
+  border-color: #0653DFFF;
+  transition-delay: 0.1s;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.input-container input:valid + .placeholder, .input-container input:focus + .placeholder {
+  top: 28%;
+  font-size: 12px;
+  color: #0653DFFF;
+  background: #191919;
+}
+
+input::placeholder {
+  color: #0653DFFF;
+}
+
+.btn-primary:hover {
+  box-shadow: -2px -2px 5px #191919, 2px 2px 5px #090909;
+}
+
+.btn-primary:active {
+  box-shadow: inset 1px 1px 2px #090909, inset -1px -1px 2px #191919;
+}
+
+.contact-info-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

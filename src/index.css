@@ -18,6 +18,39 @@ img {
 
 .large-heading {
   font-size: 8rem;
-  font-weight: 900;
+  letter-spacing: 8px;
   color: #333;
+}
+
+.btn {
+  color: #0653DFFF;
+  box-shadow: -5px -5px 20px #141414,  5px 5px 20px #090909;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #F1F1F1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(51,51,51);
+  background: -moz-linear-gradient(180deg, rgba(51,51,51,1) 0%, rgba(136,136,136,0.7903536414565826) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(51,51,51,1) 0%, rgba(136,136,136,0.7903536414565826) 100%);
+  background: linear-gradient(180deg, rgba(51,51,51,1) 0%, rgba(136,136,136,0.7903536414565826) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#333333",endColorstr="#888888",GradientType=1);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
 }
