@@ -143,19 +143,19 @@ const App = () => {
             <div className="contact-info-container" style={{marginTop: "1rem"}}>
               <h3 style={{color: "#FFF"}}>Contact me here!</h3>
               <div className={"contact-info"}>
-                <Email /> <a target={"_blank"} href="mailto:kamalavinash26@gmail.com" rel={"noreferrer"}
-                           style={{textDecoration: "none", color: "#0653DFFF"}}>kamalavinash26@gmail.com</a>
+                <Email/> <a target={"_blank"} href="mailto:kamalavinash26@gmail.com" rel={"noreferrer"}
+                            style={{textDecoration: "none", color: "#0653DFFF"}}>kamalavinash26@gmail.com</a>
               </div>
               <div className={"contact-info"} style={{marginTop: "1rem"}}>
-                <Phone /> <a href="tel:+918978299800"
-                          style={{textDecoration: "none", color: "#0653DFFF"}}>+91 8978299800</a>
+                <Phone/> <a href="tel:+918978299800"
+                            style={{textDecoration: "none", color: "#0653DFFF"}}>+91 8978299800</a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="skills">
-        <h2 className={"large-heading"} style={{ textAlign: "center", textTransform: "uppercase" }}>Skills</h2>
+        <h2 className={"large-heading"} style={{textAlign: "center", textTransform: "uppercase"}}>Skills</h2>
         <div className="skills-wrapper">
           {
             skillsContent.map((skill, skillIndex) => (
@@ -170,7 +170,7 @@ const App = () => {
                         <div className="tech-name">
                           <p>{tech.name}</p>
                         </div>
-                        <LinearWithValueLabel progress={tech.progress} />
+                        <LinearWithValueLabel progress={tech.progress}/>
                       </div>
                     ))
                   }
@@ -179,6 +179,33 @@ const App = () => {
             ))
           }
 
+        </div>
+      </div>
+      <div className="contact">
+        <h2 className={"large-heading"} style={{textAlign: "center", textTransform: "uppercase"}}>Contact</h2>
+        <div className="contact-container">
+          <div className="contact-form">
+            <form action="">
+              <div className="form-control">
+                <div className="input-container">
+                  <input type="text" required/>
+                  <span className={"placeholder"}>Enter Name</span>
+                </div>
+              </div>
+              <div className="form-control">
+                <textarea rows={5} placeholder={"Enter message"}/>
+              </div>
+              <button className={'btn btn-primary'}>Submit</button>
+            </form>
+          </div>
+          <div className={"social-media-container contact-info-social"}>
+            <div className="social-media-link">
+              <LinkedIn/>
+            </div>
+            <div className="social-media-link">
+              <Instagram/>
+            </div>
+          </div>
         </div>
       </div>
     </div>

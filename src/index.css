@@ -22,6 +22,15 @@ img {
   color: #333;
 }
 
+.btn {
+  color: #0653DFFF;
+  box-shadow: -5px -5px 20px #141414,  5px 5px 20px #090909;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
