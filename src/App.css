@@ -50,12 +50,8 @@
   margin: 0 auto;
   letter-spacing: .15em;
   animation:
-      typing 1.5s steps(30, end),
-      blink-caret 1.75s ease-in;
-}
-
-.typewriter h3.open {
-  z-index: -100;
+      typing 0.5s steps(30, end),
+      blink-caret 1.5s ease-in;
 }
 
 @keyframes typing {
@@ -86,7 +82,42 @@
 .modal-overlay.open {
   opacity: 1;
   visibility: visible;
+  height: 100vh;
+}
+
+.navigation-container {
+  display: flex;
+  color: #F1F1F1;
+  gap: 3rem;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  gap: 1rem;
+}
+
+.profile-image {
+  height: 100vh;
+  background: #F1F1F1;
+}
+
+.profile-image img {
+  object-fit: cover;
   height: 100%;
+}
+
+.nav-link {
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  transition: all 0.2s ease-in;
+}
+
+.nav-link:hover {
+  color: #0653DFFF;
 }
 
 .hamburger-menu {

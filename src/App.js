@@ -84,24 +84,55 @@ const App = () => {
     };
   }, [index]);
 
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [open])
+
   const handleDownload = () => {
     console.log("File download clicked")
   }
 
   const handleOpenNav = () => {
     setOpen(prevState => !prevState)
-    document.body.style.overflow = 'hidden'
   }
 
   return (
     <div className="main-wrapper">
       <div className="page-progress"></div>
       {/* NAVIGATION SECTION */}
-      <div className={`modal-overlay${open ? ' open' : ''}`}></div>
-      <div className="navigation">
-        <div className={`typewriter${open ? ' open' : ''}`}>
-          <h3>Avinash Kamal</h3>
+      <div className={`modal-overlay${open ? ' open' : ''}`}>
+        <div className="navigation-container">
+          <div className="profile-image">
+            <img src={profileImage} alt={"Nav Profile"}/>
+          </div>
+          <nav className={"nav-menu"}>
+            <div className="nav-link-container">
+              <a className="nav-link" href="/">Home</a>
+            </div>
+            <div className="nav-link-container">
+              <a className="nav-link" href="/">About</a>
+            </div>
+            <div className="nav-link-container">
+              <a className="nav-link" href="/">Portfolio</a>
+            </div>
+            <div className="nav-link-container">
+              <a className="nav-link" href="/">Contact</a>
+            </div>
+          </nav>
         </div>
+      </div>
+      <div className="navigation" style={{justifyContent: open ? 'flex-end' : 'space-between'}}>
+        {
+          !open && <div className={`typewriter`}>
+            <h3>Avinash Kamal</h3>
+          </div>
+        }
+
         <div className="hamburger-menu" onClick={handleOpenNav}>
           <span className={open ? 'open' : ''} id={"top"}></span>
           <span className={open ? 'open' : ''} id={"middle"}></span>

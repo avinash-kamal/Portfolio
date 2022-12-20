@@ -31,6 +31,12 @@ img {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: #F1F1F1;
+  cursor: pointer;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
