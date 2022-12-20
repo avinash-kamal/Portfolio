@@ -69,6 +69,7 @@ const skillsContent = [
 
 const App = () => {
   const [index, setIndex] = useState(0)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     setTimeout(
@@ -87,17 +88,30 @@ const App = () => {
     console.log("File download clicked")
   }
 
+  const handleOpenNav = () => {
+    setOpen(prevState => !prevState)
+    document.body.style.overflow = 'hidden'
+  }
+
   return (
     <div className="main-wrapper">
       <div className="page-progress"></div>
       {/* NAVIGATION SECTION */}
+      <div className={`modal-overlay${open ? ' open' : ''}`}></div>
       <div className="navigation">
+        <div className={`typewriter${open ? ' open' : ''}`}>
+          <h3>Avinash Kamal</h3>
+        </div>
+        <div className="hamburger-menu" onClick={handleOpenNav}>
+          <span className={open ? 'open' : ''} id={"top"}></span>
+          <span className={open ? 'open' : ''} id={"middle"}></span>
+          <span className={open ? 'open' : ''} id={"bottom"}></span>
+        </div>
+
       </div>
       <div className="landing-page">
         <div className="carousel">
-          <div
-            className="carousel-container"
-          >
+          <div className="carousel-container">
             {
               carouselContent.map((slide, slideIndex) => (
                 <div className={`slide${slideIndex === index ? ' active' : ''}`} key={slideIndex}>
@@ -197,14 +211,6 @@ const App = () => {
               </div>
               <button className={'btn btn-primary'}>Submit</button>
             </form>
-          </div>
-          <div className={"social-media-container contact-info-social"}>
-            <div className="social-media-link">
-              <LinkedIn/>
-            </div>
-            <div className="social-media-link">
-              <Instagram/>
-            </div>
           </div>
         </div>
       </div>

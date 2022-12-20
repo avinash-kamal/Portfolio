@@ -2,7 +2,7 @@
   background: #191919;
   position: relative;
   overflow: hidden;
-  padding: 2rem;
+  max-width: 100%;
 }
 
 .main-wrapper:after {
@@ -29,14 +29,111 @@
   transform: skew(20deg) rotate(-60deg);
 }
 
+.navigation {
+  position: fixed;
+  padding: 2rem;
+  color: #F1F1F1;
+  width: 100%;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.typewriter h3 {
+  color: #F1F1F1;
+  overflow: hidden;
+  border-right: .15em solid transparent;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+      typing 1.5s steps(30, end),
+      blink-caret 1.75s ease-in;
+}
+
+.typewriter h3.open {
+  z-index: -100;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  25% { border-color: #F1F1F1 }
+}
+
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+  z-index: 20;
+  top: 0;
+  left: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+.hamburger-menu {
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-menu span {
+  height: 2px;
+  background: #F1F1F1;
+  border-radius: 10px;
+  position: relative;
+  z-index: 100;
+  transform-origin: 1px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.hamburger-menu .open:first-child {
+  transform: rotate(45deg);
+}
+
+.hamburger-menu .open:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger-menu .open:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
 .landing-page {
   height: 100vh;
   display: flex;
+  padding: 2rem;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  z-index: 10;
 }
 
 .carousel {
@@ -90,6 +187,7 @@
   flex: 1;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 }
 
 .about-wrapper {
@@ -162,6 +260,9 @@ img {
   gap: 8px;
 }
 
+.skills {
+  padding: 2rem;
+}
 
 .skills-wrapper {
   display: grid;
@@ -181,6 +282,10 @@ img {
   gap: 1rem;
   align-items: center;
   padding: 1rem 0;
+}
+
+.contact {
+  padding: 2rem;
 }
 
 .contact-container {
